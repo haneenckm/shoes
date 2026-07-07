@@ -60,7 +60,7 @@ const ORDER_STEPS = ["Pending", "Payment Done", "Order Placed", "Order Delivered
 const STATUS_COLORS = {
   Pending: "#d07a00",
   "Payment Done": "#5a55c5",
-  "Order Placed": "#063575",
+  "Order Placed": "#74AF41",
   "Order Delivered": "#198754"
 };
 const STORAGE_KEY = "kelzado-state-v1";
