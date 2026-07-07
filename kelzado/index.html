@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kelzado sneaker archive and curated footwear store in Bangalore, India.">
+  <meta name="theme-color" content="#063575">
+  <title>Kelzado — Sneaker Archive</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="cursor" aria-hidden="true"><span></span></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand-link interactive" href="#home" aria-label="Kelzado home">
+      <span aria-hidden="true">⌂</span> HOME
+    </a>
+    <nav aria-label="Primary navigation">
+      <a class="interactive" href="#shop">SHOP</a>
+      <a class="interactive" href="#about">ABOUT</a>
+      <a class="interactive" href="#contact">CONTACT</a>
+    </nav>
+    <div class="header-actions">
+      <button class="text-button interactive" type="button" data-open-panel="profile">PROFILE <span id="wishlist-count">0</span></button>
+      <button class="text-button interactive" type="button" data-open-panel="cart">CART <span id="cart-count">0</span></button>
+    </div>
+  </header>
+
+  <main id="smooth-content">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <p class="eyebrow">CURATED IN BANGALORE / EST. 2026</p>
+      <h1 id="hero-title">KELZADO</h1>
+      <div class="hero-rule"></div>
+      <p class="hero-copy">STEP INTO THE ARCHIVE — RARE PAIRS, CULT CLASSICS, AND FUTURE ICONS.</p>
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="orbit-circle orbit-circle-a"></div>
+        <div class="orbit-circle orbit-circle-b"></div>
+      </div>
+    </section>
+
+    <section class="shop-section" id="shop" aria-labelledby="shop-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">01 / ACTIVE INVENTORY</p>
+          <h2 id="shop-title">THE COLLECTION</h2>
+        </div>
+        <p id="result-count" class="result-count" aria-live="polite">30 ITEMS</p>
+      </div>
+
+      <form class="filters" id="filters" aria-label="Filter products">
+        <label>
+          <span>SEARCH</span>
+          <input id="search-filter" type="search" placeholder="MODEL OR BRAND" autocomplete="off">
+        </label>
+        <label>
+          <span>GENDER</span>
+          <select id="gender-filter">
+            <option value="all">ALL</option>
+            <option value="Men">MEN</option>
+            <option value="Women">WOMEN</option>
+          </select>
+        </label>
+        <label>
+          <span>BRAND</span>
+          <select id="brand-filter">
+            <option value="all">ALL BRANDS</option>
+            <option value="Nike">NIKE</option>
+            <option value="Adidas">ADIDAS</option>
+            <option value="New Balance">NEW BALANCE</option>
+            <option value="Asics">ASICS</option>
+          </select>
+        </label>
+        <label>
+          <span>SORT</span>
+          <select id="sort-filter">
+            <option value="featured">FEATURED</option>
+            <option value="price-asc">PRICE: LOW TO HIGH</option>
+            <option value="price-desc">PRICE: HIGH TO LOW</option>
+            <option value="year-desc">NEWEST FIRST</option>
+          </select>
+        </label>
+        <button class="outline-button interactive" type="reset">RESET</button>
+      </form>
+
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <p>NO PAIRS MATCH THIS SEARCH.</p>
+        <button class="solid-button interactive" type="button" id="clear-filters">CLEAR FILTERS</button>
+      </div>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="about-copy">
+        <p class="eyebrow">02 / THE ARCHIVE</p>
+        <h2 id="about-title">SHOES WITH A PAST. STYLE WITH A FUTURE.</h2>
+      </div>
+      <div class="about-details">
+        <p>Kelzado is an independent sneaker archive based in Manavarthipet, Bangalore. Every pair is selected for cultural relevance, construction, and story.</p>
+        <dl>
+          <div><dt>BASE</dt><dd>BANGALORE, INDIA</dd></div>
+          <div><dt>FOCUS</dt><dd>RARE / CULT / CONTEMPORARY</dd></div>
+          <div><dt>CONTACT</dt><dd>+91 98765 43210</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <footer class="site-footer" id="contact">
+      <p class="footer-kicker">CURATED BY KELZADO</p>
+      <div class="footer-links">
+        <a class="interactive" href="https://instagram.com/kelzado.archive" target="_blank" rel="noreferrer">INSTAGRAM</a>
+        <a class="interactive" href="https://facebook.com" target="_blank" rel="noreferrer">FACEBOOK</a>
+        <a class="interactive" href="https://youtube.com" target="_blank" rel="noreferrer">YOUTUBE</a>
+        <a class="interactive" href="mailto:hello@kelzado.in">EMAIL</a>
+      </div>
+      <div class="footer-bottom">
+        <address>MANAVARTHIPET, BANGALORE, INDIA<br>+91 98765 43210 / @KELZADO.ARCHIVE</address>
+        <button class="footer-admin interactive" type="button" data-open-panel="admin">OWNER GATEWAY</button>
+        <p>©2026 </p>
+      </div>
+    </footer>
+  </main>
+
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <aside class="drawer" id="cart-panel" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="panel-header">
+      <div><p class="eyebrow">YOUR SELECTION</p><h2 id="cart-title">CART</h2></div>
+      <button class="icon-button interactive" type="button" data-close-panel aria-label="Close cart">×</button>
+    </div>
+    <div class="panel-list" id="cart-list"></div>
+    <div class="cart-summary">
+      <div><span>SUBTOTAL</span><strong id="cart-subtotal">₹0</strong></div>
+      <p>Shipping and taxes calculated at the gateway.</p>
+      <button class="solid-button interactive" type="button" id="checkout-button">PROCEED TO CHECKOUT</button>
+    </div>
+  </aside>
+
+  <aside class="drawer drawer-wide" id="profile-panel" aria-labelledby="profile-title" aria-hidden="true">
+    <div class="panel-header">
+      <div><p class="eyebrow">ACCOUNT UTILITY</p><h2 id="profile-title">PROFILE</h2></div>
+      <button class="icon-button interactive" type="button" data-close-panel aria-label="Close profile">×</button>
+    </div>
+    <div class="profile-tabs" role="tablist">
+      <button class="tab-button active interactive" type="button" data-profile-tab="wishlist">WISHLIST</button>
+      <button class="tab-button interactive" type="button" data-profile-tab="orders">ORDERS</button>
+      <button class="tab-button interactive" type="button" data-profile-tab="address">ADDRESS</button>
+    </div>
+    <section class="profile-view active" data-profile-view="wishlist">
+      <div class="panel-list" id="wishlist-list"></div>
+    </section>
+    <section class="profile-view" data-profile-view="orders">
+      <div id="order-list"></div>
+    </section>
+    <section class="profile-view" data-profile-view="address">
+      <form class="stack-form" id="address-form">
+        <label>FULL NAME<input name="name" required autocomplete="name"></label>
+        <label>PHONE<input name="phone" required autocomplete="tel"></label>
+        <label>SHIPPING ADDRESS<textarea name="address" rows="5" required autocomplete="street-address"></textarea></label>
+        <button class="solid-button interactive" type="submit">SAVE ADDRESS</button>
+      </form>
+      <p class="form-note" id="profile-wallet">STORE CREDIT: ₹0</p>
+    </section>
+  </aside>
+
+  <aside class="drawer drawer-admin" id="admin-panel" aria-labelledby="admin-title" aria-hidden="true">
+    <div class="panel-header">
+      <div><p class="eyebrow">RESTRICTED UTILITY</p><h2 id="admin-title">OWNER</h2></div>
+      <button class="icon-button interactive" type="button" data-close-panel aria-label="Close owner gateway">×</button>
+    </div>
+    <form class="admin-login" id="admin-login">
+      <label>OWNER PASSKEY<input id="admin-passkey" type="password" required autocomplete="current-password"></label>
+      <button class="solid-button interactive" type="submit">UNLOCK CONSOLE</button>
+      <p class="form-note">Static demo gate. Passkey: KELZADO2026</p>
+      <p class="error-message" id="admin-error" role="alert"></p>
+    </form>
+    <div class="admin-console" id="admin-console" hidden>
+      <div class="profile-tabs">
+        <button class="tab-button active interactive" type="button" data-admin-tab="inventory">INVENTORY</button>
+        <button class="tab-button interactive" type="button" data-admin-tab="customers">ORDERS / CUSTOMERS</button>
+      </div>
+      <section class="admin-view active" data-admin-view="inventory">
+        <form class="stack-form inventory-form" id="inventory-form">
+          <div class="form-grid">
+            <label>MODEL NAME<input name="name" required></label>
+            <label>BRAND<select name="brand" required><option>Nike</option><option>Adidas</option><option>New Balance</option><option>Asics</option></select></label>
+            <label>RELEASE YEAR<input name="year" type="number" min="1970" max="2030" required></label>
+            <label>PRICE INR<input name="price" type="number" min="1" required></label>
+            <label>GENDER<select name="gender"><option>Men</option><option>Women</option></select></label>
+            <label>CONDITION<input name="condition" value="New" required></label>
+            <label>SIZES (COMMA SEPARATED)<input name="sizes" placeholder="7, 8, 9, 10" required></label>
+            <label>FRAME COLOR<input name="color" type="color" value="#b8ec32"></label>
+          </div>
+          <label>PHOTO URL<input name="image" type="url" required placeholder="https://images.unsplash.com/..."></label>
+          <label class="checkbox-label"><input name="available" type="checkbox" checked> AVAILABLE FOR SALE</label>
+          <button class="solid-button interactive" type="submit">ADD TO ACTIVE INVENTORY</button>
+        </form>
+      </section>
+      <section class="admin-view" data-admin-view="customers">
+        <div id="admin-orders"></div>
+        <form class="stack-form customer-form" id="customer-form">
+          <h3>CUSTOMER PROFILE</h3>
+          <label>PHONE<input name="phone"></label>
+          <label>ADDRESS<textarea name="address" rows="4"></textarea></label>
+          <label>STORE CREDIT INR<input name="credit" type="number" min="0"></label>
+          <button class="outline-button interactive" type="submit">UPDATE CUSTOMER</button>
+        </form>
+      </section>
+    </div>
+  </aside>
+
+  <section class="checkout-overlay" id="checkout-overlay" aria-labelledby="checkout-title" aria-hidden="true">
+    <button class="icon-button checkout-close interactive" type="button" id="checkout-close" aria-label="Close checkout">×</button>
+    <div class="checkout-stage active" data-checkout-stage="summary">
+      <p class="eyebrow">SECURE GATEWAY / STEP 01</p>
+      <h2 id="checkout-title">CHECKOUT PAYLOAD</h2>
+      <div id="checkout-summary"></div>
+      <button class="solid-button invert interactive" type="button" id="gateway-button">OPEN SECURE GATEWAY</button>
+    </div>
+    <div class="checkout-stage" data-checkout-stage="gateway">
+      <p class="eyebrow">STRIPE SIMULATION / STEP 02</p>
+      <h2>PAYMENT GATEWAY</h2>
+      <form class="gateway-form" id="payment-form">
+        <label>EMAIL<input type="email" required value="collector@kelzado.in"></label>
+        <label>CARD NUMBER<input inputmode="numeric" required value="4242 4242 4242 4242"></label>
+        <div class="form-grid">
+          <label>EXPIRY<input required value="12/30"></label>
+          <label>CVC<input inputmode="numeric" required value="123"></label>
+        </div>
+        <button class="solid-button invert interactive" type="submit" id="pay-button">SIMULATE PAYMENT</button>
+      </form>
+    </div>
+    <div class="checkout-stage checkout-success" data-checkout-stage="success">
+      <p class="success-mark">✓</p>
+      <h2>ORDER PLACED</h2>
+      <p id="success-order-id"></p>
+      <button class="outline-button light interactive" type="button" data-open-panel="profile">TRACK ORDER</button>
+    </div>
+  </section>
+
+  <template id="product-template">
+    <article class="product-card">
+      <button class="wish-button interactive" type="button" aria-label="Add to wishlist">♡</button>
+      <div class="product-visual">
+        <div class="product-circle">
+          <img alt="" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <div class="product-info">
+        <p class="item-number"></p>
+        <h3></h3>
+        <p class="product-meta"></p>
+        <p class="product-condition"></p>
+        <div class="product-purchase">
+          <strong class="product-price"></strong>
+          <label>US SIZE<select class="size-select"></select></label>
+          <button class="outline-button add-cart interactive" type="button">ADD TO CART</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <div class="toast-region" id="toast-region" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
